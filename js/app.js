@@ -295,7 +295,7 @@ function list(path) {
     $('#content').html(content);
 
     var password = localStorage.getItem('password' + path);
-    $('#list').html(`<div class="d-flex justify-content-center"><div class="spinner-border ${UI.loading_spinner_class} m-5" role="status"><span class="sr-only"></span></div></div>`);
+    $('#list').html(`<div class="d-flex justify-content-center"><div class="spinner-grow text-primary m-5" role="status"><span class="sr-only"></span></div></div>`);
     $('#readme_md').hide().html('');
     $('#head_md').hide().html('');
 
@@ -342,7 +342,7 @@ function list(path) {
                         window.scroll_status.loading_lock = true;
 
                         // Show a loading spinner
-                        $(`<div id="spinner" class="d-flex justify-content-center"><div class="spinner-border ${UI.loading_spinner_class} m-5" role="status"><span class="sr-only"></span></div></div>`)
+                        $(`<div id="spinner" class="d-flex justify-content-center"><div class="spinner-grow text-primary m-5" role="status"><span class="sr-only"></span></div></div>`)
                             .insertBefore('#readme_md');
 
                         let $list = $('#list');
@@ -533,7 +533,7 @@ function render_search_result_list() {
   `;
     $('#content').html(content);
 
-    $('#list').html(`<div class="d-flex justify-content-center"><div class="spinner-border ${UI.loading_spinner_class} m-5" role="status"><span class="sr-only"></span></div></div>`);
+    $('#list').html(`<div class="d-flex justify-content-center"><div class="spinner-grow text-primary m-5" role="status"><span class="sr-only"></span></div></div>`);
     $('#readme_md').hide().html('');
     $('#head_md').hide().html('');
 
@@ -580,7 +580,7 @@ function render_search_result_list() {
                         window.scroll_status.loading_lock = true;
 
                         // Show a loading spinner
-                        $(`<div id="spinner" class="d-flex justify-content-center"><div class="spinner-border ${UI.loading_spinner_class} m-5" role="status"><span class="sr-only"></span></div></div>`)
+                        $(`<div id="spinner" class="d-flex justify-content-center"><div class="spinner-grow text-primary m-5" role="status"><span class="sr-only"></span></div></div>`)
                             .insertBefore('#readme_md');
 
                         let $list = $('#list');
@@ -697,7 +697,7 @@ function onSearchResultItemClick(a_ele) {
     var cur = window.current_drive_order;
     var title = `Loading...`;
     $('#SearchModelLabel').html(title);
-    var content = `<div class="d-flex justify-content-center"><div class="spinner-border ${UI.loading_spinner_class} m-5" role="status"><span class="sr-only"></span></div>`;
+    var content = `<div class="d-flex justify-content-center"><div class="spinner-grow text-primary m-5" role="status"><span class="sr-only"></span></div>`;
     $('#modal-body-space').html(content);
 
     // Request a path
@@ -754,7 +754,7 @@ function get_file(path, file, callback) {
 function file(path) {
     var name = path.split('/').pop();
     var ext = name.split('.').pop().toLowerCase().replace(`?a=view`, "").toLowerCase();
-    $('#content').html(`<div class="d-flex justify-content-center" style="height: 150px"><div class="spinner-border ${UI.loading_spinner_class} m-5" role="status"><span class="sr-only"></span></div></div>`);
+    $('#content').html(`<div class="d-flex justify-content-center" style="height: 150px"><div class="spinner-grow text-primary m-5" role="status"><span class="sr-only"></span></div></div>`);
     if ("|html|php|css|go|java|js|json|txt|sh|md|".indexOf(`|${ext}|`) >= 0) {
         return file_code(path);
     }
